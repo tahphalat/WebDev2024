@@ -1,0 +1,10 @@
+Outline
+- what is html?
+- Basic structure (<html>, <head>, <body>)
+- DOM (html tag such as ...)
+- html (id, class, attribute)
+- type of html
+    - html content (section which user can see) (h1-h6, p, list, table, link, image, video, br)
+    - html semantic (สิ่งที่ทำให้ ... work faster)
+    - html form (input part such as text-number, checkbox, radio, textarea, button)
+- example register form

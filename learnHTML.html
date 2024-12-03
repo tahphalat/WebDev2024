@@ -1,0 +1,151 @@
+t<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ส่วนที่ not show in Brower -->
+
+    <!-- tag meta which has attribute "charset" --> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 2 </title>
+</head>
+<body>
+    <!-- ส่วนที่ show in Brower -->
+    Hello, World!! <br>
+    Nice to meet you 
+        <!-- 1. html content -->
+
+    <h1>Learning html</h1>
+    <h2>Hello h2</h2>
+    <p>
+        วันนี้เรามาเรียน html กัน 
+    </p>
+
+    <h2>Unordered List</h2>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+    
+    <h2>Ordered List</h2>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ol>
+
+
+    <h2>Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <!--th : ทำให้ตัวหนังสือเข้ม  -->
+                <th>Head 1</th> 
+                <th>Head 2</th>
+                <th>Head 3</th>
+                <th>Head 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>row 1</td>
+                <td>row 2</td>
+                <td>row 3</td>
+                <td>row 4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Insert Link</h2>
+    <a href="https://www.youtube.com/watch?v=GBUAez6w5ec">
+        youtube
+    </a>
+
+    <h2>Insert Image</h2>
+    <!--lorem image : website which can get image  -->
+    <img 
+    src="https://fastly.picsum.photos/id/705/200/200.jpg?hmac=2HZlwayMAMOyCllDpM-Mx3u2Xyk40VRHAzlpNLKyTC8" 
+    width="200" 
+    height="200"
+    alt=""
+    >
+    <!-- note : src, width(pixel), height(pixel), alt are attribute  -->
+
+    <!-- What different between div and p -->
+     <!-- p has space but div hasn't any decorate -->
+      <!-- CSS and JS often use div -->
+    <p>
+        using p
+    </p>
+    <p>
+        using p
+    </p>
+    <p>
+        using p
+    </p>
+    <div>
+        using div
+    </div>
+    <div>
+        using div
+    </div>
+    <div>
+        using div
+    </div>
+
+    <!-- ///////////////////////////////////////////////////////////// -->
+            <!-- 2. html semantic -->
+     <!-- SEO : เป็น tag ที่เพิ่ม/ให้รู้ความหมายมากขึ้น ช่วยให้คนมาอ่าน code สามารถอ่านได้ง่าย เข้าใจมากขึ้น  สามารถใช้ div แทนได้-->
+
+    <!-- ///////////////////////////////////////////////////////////// -->
+            <!-- 3. html form  : ทำให่ website can interact with users-->
+    <h1>Register Form</h1>
+    FirstName <input type="text">
+    Surname <input type="text"> <br>
+    age <input type="number" min="0" max="100">
+    <div>
+        gentle 
+        <div>
+            <input name="gender" type="radio"> Man
+        </div>
+        <div>
+            <input name="gender" type="radio"> Woman
+        </div>
+        <div>
+            <input name="gender" type="radio"> None
+        </div>
+    </div>
+    <!-- use attribute "name" for not allow user select more than 1 option -->
+    <!-- use div instead of p becuase div can decorate more -->
+
+
+    <div>
+        Interest
+        <div>
+                <input name="interest" type="checkbox"> การเมือง
+            </div>
+            <div>
+                <input name="interest" type="checkbox"> Music
+            </div>
+            <div>
+                <input name="interest" type="checkbox"> VideoGame
+        
+                <!-- user can select more than 1 options, although it has same attribute "name"  -->
+        </div>
+    </div>
+
+    <div>
+        คำอธิบายตัวตนเพิ่มเติม
+        <div>
+            <textarea name="" id=""></textarea>
+        </div>
+    </div>
+
+    <button>send(button)</button>
+    <input type="submit" value="send(typeSubmit)">
+
+
+</body>
+</html>
