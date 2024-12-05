@@ -1,0 +1,20 @@
+Basic
+- CSS Text Styling (font-Size, font-family) แต่งตัวอักษร
+- CSS Box model (margin, padding, border)
+    // ให้มองว่า div คือ กล่องๆ นึง
+    * padding เป็นการขยายภายในกล่อง ดังนั้นขนาด padding จึงนับรวมกับขนาดของกล่องด้วย
+    * margin เป็นการขยาย/ผลักออกจากภายนอกกล่อง ดังนั้นขนาดของ margin จึงไม่ได้นับรวมกันกับขนาดของกล่อง
+    หากเราต้องการจะขยาย/เว้นระยะห่าง พร้อมกับตกแต่งไปด้วย -> ใช้ padding 
+    หากเพียงต้องการขยายอย่างเดียว โดยไม่ให้ style เข้ามายุ่ง -> ใช้ margin
+
+    TRICK!! 
+        เราสามารถกด Inspect(เพื่อใช้เป็น debug tools) ที่หน้าเว็บ แล้วแก้ไข code ที่นั่นได้ แต่มันจะไม่ส่งผลต่อโค้ดหลักจริงๆ ดังนั้น เมื่อกด refresh การแก้ไขก็จะหายไป และweb ก็จะกลับไปเป็นเหมือนเดิม()
+
+- CSS Layout (display: block, inline, inline-block)
+- CSS Position (static, relative, absolute, fixed)
+- CSS float wrap text ได้ (float: left, flaot:right)
+- CSS Image (background-color, background-image)
+
+ADVANCE (แบบเกริ่น)
+- CSS Pseudo class(:hover, :active, :first-child)
+- CSS Transition and animation
