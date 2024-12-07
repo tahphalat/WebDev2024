@@ -12,8 +12,9 @@ Basic
 
 - CSS Layout (display: block, inline, inline-block)
 - CSS Position (static, relative, absolute, fixed)
-- CSS float wrap text ได้ (float: left, flaot:right)
-- CSS Image (background-color, background-image)
+- CSS float wrap text ได้ (float: left, flaot:right, footer)
+- CSS Image (background-image, size and position) 
+- หน่วยของ CSS (px, rem, em, vw, vh, percent)
 
 ADVANCE (แบบเกริ่น)
 - CSS Pseudo class(:hover, :active, :first-child)

@@ -1,6 +1,30 @@
+<!-- CSS-tricks.com -->
 <!-- ถ้าอยากเล่นกับ CSS ควรใช้ div แทน h1,h2... -->
 <!-- span คล้าย div (ไม่มี style เหมาะแก่การตกแต่ง) แต่ span ไม่ขึ้นบรรทัดใหม่ในขณะที่ div จะขึ้นบรรทัดใหม่ทุกครั้ง -->
 <!-- การใช้ font จากภายนอก -->
+ <!-- background-color :  -->
+
+<!-- LAYOUT --> 
+<!--display 5 ตัวที่เพียงพอต่อการทำ 1 web -> display: inline-block/ block / inline (ไม่ใช่ block ดังนั้นจะปรับขนาดโดยใช้ width และ height ไม่ได้ ) / flex / grid --> 
+<!-- flex : มาใช้แทน display:inline-block ได้ : เป็นการรวม หลายๆ div ให้อยู่บรรทัดเดียวกันได้โดยไม่ต้องประกาศให้อยู่ใน class เดียวกันทุกตัว  
+          : display : flex; flex-direction:row-reverse;-->
+<!-- 1 DOM มีได้มากกว่า 1 class ได้ ซึ่งสามารถแบ่งได้โดยการเว้นวรรค เช่น class="grid-item item1 -> มี 2 class ได้แก่ grid-item และ item1" -->
+ <!-- สามารถใช้ style ร่วมกันในหลายๆ class โดยการใช้ "," เช่น .item-1,.item-3{ background-color: red;}-->
+
+<!-- POSITION -->
+ <!-- 
+    1.Static : default
+    2.Relative : อิงตามจุด 0,0 ของ block (div) (อิงตามมุมซ้ายบนของ block มัน)
+    3.Absolute : อิงตามมุมซ้ายบนของจอ 
+    4.Fixed : คล้าย Absolute เพียงแค่ Scroll จะไม่มีผล ตำแหน่งจะอยู่เหมือนเดิม
+    5.Sticky : Absolute + Fixed -> จะAbsoute ตอนเริ่ม และจะ Fixed ตอนเลื่อน
+ -->
+
+<!-- FLOAT -->
+<!--  
+    เป็นการลอยไปทับ ซึ่งต่างจาก position ที่เป็นการแปะ
+-->
+
 t<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,15 +77,115 @@ t<!DOCTYPE html>
             /* เอา border ออก */
             /* border: 0;  */
             border:2px blue solid;
+            /* เดิม display:inline-block */
+            display:block;
+            width: 100px;
+            height: 35px;
         }
         
         .header-form{
             font-weight: 1000;
         }
 
+        .gender{
+            /* ทำให้ตัวเลือก เพศ อยู่ในบรรทัดเดียวกัน */
+            /* display:inline-block; */
+            /* height:50px; */
+
+            /* ใช้ flex แทน จะได่ไม่ต้องประกาศทุกตัวให้อยู่ใน class เดียวกัน */
+            display:flex;
+            flex-direction: row-reverse;
+        }
+        .container{
+            display: flex;
+        }
+
+        .item-left{
+            background-color: red;
+            flex: 1;
+        }
+        .item-right{
+            background-color: blue;
+            /* flex:1 */
+            flex: 2;
+        }
+
+        .grid-container{
+            display: grid;
+            /* fr = fraction */
+            /* ลองทำให้มี 3 columns */
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .item-1, .item-3{
+            background-color: aqua;
+        }
+
+
+        .containerPosition{
+            height:1800px;
+        }
+
+        /* top, bottom, left, right */
+        /* relative : อิงตามตำแหน่ง 0,0 ของมัน นั่นก็คือ มุมซ้ายบนของข้อความ */
+        .relative{
+            position:relative;
+            left:20px;
+            top:20px;
+        }
+        /* absolute : อิงตามตำแหน่งของหน้าจอ  */
+        .absolute{
+            position:absolute;
+            /* ทำให้อยู่ซ้ายบน */
+            /* top:0;
+            left:0; */
+            /* ทำให้อยู่ขวาบน */
+            top:0;
+            right:0;
+        }
+        /* fixed : คล้าย absolute แต่จะเคลื่อนตามหน้าจอไปด้วย */
+        .fixed{
+            position: fixed;
+            top:0;
+            right:0;
+        }
+        
+        /* absolute + fixed  */
+        /* ตอนแรกเป็น absolute(ประจำตำแหน่ง) แต่พอเลื่อนลงเลื่อนขึ้นในขอบเขตของมัน มันจะ fixed(เลื่อนตามหน้าจอ) */
+        .sticky{
+            position:sticky;
+            top:100px;
+            /* right:100px; */
+        }
+
+        .right{
+            float: right;
+        }
+
+        .left{
+            float: left;
+        }
+
+        /* image */
+        .image{
+            background-image:url(https://fastly.picsum.photos/id/423/200/200.jpg?hmac=fXwRSSVHFlYgq9MfObWaWCb_p9L6ysOWda9lLOtAWc0);
+            height: 400px;
+            /* ทำไมมันออกมาซ้ำๆ = image ใน CSS เราต้องกำหนดขนาดเอง มันไม่ได้กำหนดขนาดตายตัวให้/ยุๆเอามาแปะให้เหมือนใน HTML */
+            width: 200px;
+
+            /* background-size: cover; */
+            background-size: contain;
+            background-position: bottom right ;
+            background-repeat: no-repeat;
+        }
+
+
     </style>
 </head>
 <body>
+
+    <div class="sticky">HELLO, WORLD!!</div>
     <!-- ส่วนที่ show in Brower -->
     Hello, World!! <br>
     Nice to meet you 
@@ -147,6 +271,7 @@ t<!DOCTYPE html>
     <div>
         using div
     </div>
+    <br><br><br>
 
     <!-- ///////////////////////////////////////////////////////////// -->
             <!-- 2. html semantic -->
@@ -154,19 +279,45 @@ t<!DOCTYPE html>
 
     <!-- ///////////////////////////////////////////////////////////// -->
             <!-- 3. html form  : ทำให่ website can interact with users-->
+    <div class="container">
+        <div class="item-left">left</div>
+        <div class="item-right">right</div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item item-1"> item 1</div>
+        <div class="grid-item item-2"> item 2</div>
+        <div class="grid-item item-3"> item 3</div>
+        <div class="grid-item item-4"> item 4</div>
+    </div>
+
+    <div class="containerPosition">
+        <div class="static">Static</div>
+        <!--มีค่าเท่ากับ <div>Static</div> เพราะStatic เป็นค่า default  -->
+        <div class="relative">Relative</div>
+        <div class="absolute">Absolute</div>
+        <div class="fixed">Fixed</div>
+        <div class="sticky">Sticky</div>
+    </div>
+
+    <div class="right">RIGHT</div>
+    <div class="left">LEFT</div>
+
     <div id="Register">Register Form</div>
-    <span>FirstName <input class="header-form"type="text"></span>
-    <span>Surname <input class="header-form" type="text"> <br></span>
+    <span class="header-form">FirstName</span> 
+    <input class="form"type="text">
+    <span class="header-form">Surname</span> 
+    <input class="form" type="text"> <br>
     age <input class = "form" type="number" min="0" max="100">
-    <div>
-        gentle 
-        <div>
+    <div class="gender">
+        <--gentle 
+        <div >
             <input name="gender" type="radio"> Man
         </div>
-        <div>
+        <div >
             <input name="gender" type="radio"> Woman
         </div>
-        <div>
+        <div >
             <input name="gender" type="radio"> None
         </div>
     </div>
@@ -199,6 +350,20 @@ t<!DOCTYPE html>
     <button>send(button)</button>
     <input type="submit" value="send(typeSubmit)">
 
+    <br><br>
 
+    <!-- ตัวอย่างการใช้งาน float -->
+    <div class="left"><img src="https://fastly.picsum.photos/id/864/200/200.jpg?hmac=enPW23d2MpTvv2RfL7CtuO_cKSvCg4DGCYtNPc4-48M" alt=""></div>
+
+    <!-- inline style : เป็นการเขียน CSS ในนี้ได้เลย เหมาะกับการใส่ CSS บรรทัดเดียว -->
+     <!-- ไใ่แนะนำให้ใส่มากกว่า 1 อัน เพราะมันจะรก อ่านยาก -->
+    <div style="color:blue; font-size:24px;">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi consequuntur ipsum iure accusamus ad quidem, beatae est, laudantium minima, doloribus recusandae suscipit blanditiis reiciendis ut nemo nostrum cupiditate vero laboriosam!
+    </div>
+    <div style="clear: both;"></div>
+
+
+
+    <div class="image"></div>
 </body>
 </html>
