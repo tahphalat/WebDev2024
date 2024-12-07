@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegisterForm</title>
+
+    <style>
+        @font-face{
+            font-family:'Kanit';
+            src: url(',/Kanit/Kanit-Regular.ttf')
+        }
+        body{
+            font-family:'kanit';
+        }
+
+        /* การแต่ง style มักใช้ class เพื่อให้ใช้ได้กับหลายๆอัน*/
+        .container{
+            width: 400px;
+            /* set ให้อยู่ตรงกลาง */
+            margin-left:auto;
+            margin-right:auto;
+            background-color: azure;
+            padding: 30px;
+        }
+
+        .header{
+            font-size: 30px;
+            /* ให้ text อยู่ตรงกลาง */
+            text-align: center;
+        }
+
+        .header-form{
+            width: 110px;
+        }
+
+        .flex{
+            display:flex;
+        }
+
+        .form-input{
+            margin-bottom:4px;
+        }
+
+        /* input.form เพื่อให้ class form ใน class input เท่านั้น ที่จะเกิดการเปลี่ยนแปลง */
+        input.form, textarea{
+            border:1px gainsboro solid;
+            width: 100%;
+        }
+        
+        .center{
+            text-align: center;
+        }
+
+        .button{
+            border:0;
+            width: 100%;
+            height: 40px;
+            /* หยิบสีจาก material.io */
+            background-color: #9CCC65 ;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header form-input">
+            Register Form
+        </div>
+
+        <div class="flex form-input">
+            <!-- span ใช้กับ width ไม่ได้เพราะเป็น inline ดังนั้นใช้ div กับ Firstname -->
+            <div class="header-form">Firstname</div>
+            <input class="form" type="text">
+        </div>
+
+        <div class="flex form-input">
+            <div class="header-form">Surname</div>
+            <input class="form" type="text"><br>
+        </div>
+
+        <div class="flex form-input">
+           <div class="header-form">Age</div>  
+            <input class="form" type="number" min="0" max="100">
+        </div>
+
+        <div class="gender form-input flex">
+            <div class="header-form">gender</div>
+            <div>
+                <input name="gender" type="radio"> Men
+                <input name="gender" type="radio"> Women
+                <input name="gender" type="radio"> Other
+            </div>
+        </div>
+
+        <div class="form-input">
+            Interest
+            <div>
+                    <input name="interest" type="checkbox"> การเมือง
+                </div>
+                <div>
+                    <input name="interest" type="checkbox"> Music
+                </div>
+                <div>
+                    <input name="interest" type="checkbox"> VideoGame
+            
+                    <!-- user can select more than 1 options, although it has same attribute "name"  -->
+            </div>
+        </div>
+
+        <div class="form-input">
+            คำอธิบายตัวตนเพิ่มเติม
+            <div>
+                <textarea name="" id=""></textarea>
+            </div>
+        </div>
+
+        <div class="form-input center">
+            <a href="https://youtube.com">youtube</a>
+        </div>
+
+        <div class="center">
+            <button class="button">send</button>
+        </div>
+    </div>
+
+</body>
+</html>

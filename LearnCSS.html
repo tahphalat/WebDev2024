@@ -50,11 +50,17 @@ t<!DOCTYPE html>
             background-color:antiquewhite; 
             /* เปลี่ยน font ใน web */
             font-family: "Kanit";
+
+            font-size:14px;
+        }
+
+        html{
+            font-size: 40px;
         }
         /* 2. ใช้ id  มักใช้กับ identity/ อะไรที่มีสิ่งเดียวใน web*/
 
         #register{
-            font-size: 50px;
+            font-size: 2em;
             color:Blue;
             font-weight: 800;
             padding-top: 10px;
@@ -71,6 +77,8 @@ t<!DOCTYPE html>
 
             /* ถ้าใช้ border, margin, padding เฉยๆ ไม่มี -left -> จะเป็นการเพิ่มรอบด้าน */
             border-bottom: 9px black solid;
+
+            width: 50%;
         }
         /* 3. ใช้class มักเอาไปใช้กับของหลายๆอย่าง */
         .form{
@@ -179,7 +187,14 @@ t<!DOCTYPE html>
             background-position: bottom right ;
             background-repeat: no-repeat;
         }
+        
 
+        .box{
+            background-color: black;
+            /* height: 200px; */
+            height: 50vh;
+            width: 50vw;
+        }
 
     </style>
 </head>
@@ -362,8 +377,8 @@ t<!DOCTYPE html>
     </div>
     <div style="clear: both;"></div>
 
-
-
     <div class="image"></div>
+
+    <div class="box"></div>
 </body>
 </html>

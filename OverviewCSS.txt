@@ -14,7 +14,8 @@ Basic
 - CSS Position (static, relative, absolute, fixed)
 - CSS float wrap text ได้ (float: left, flaot:right, footer)
 - CSS Image (background-image, size and position) 
-- หน่วยของ CSS (px, rem, em, vw, vh, percent)
+- หน่วยของ CSS (px, rem(อิงตาม root (นั่นคือ อิงตามขนาด html) เช่น 2 rem คือ ขนาดเป็น 2 เท่าของขนาด html (default html ขนาด 16 )) em อิงตามขนาดของตัวแม่มัน(ตัวที่กำลัง:%y+
+คลุมมันอยู่), vw(width) vh(height) : ขนาดอิงตามขนาดหน้าจอที่เรากำลังเปิด, percent)
 
 ADVANCE (แบบเกริ่น)
 - CSS Pseudo class(:hover, :active, :first-child)
