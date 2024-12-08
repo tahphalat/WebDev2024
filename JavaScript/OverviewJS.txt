@@ -1,0 +1,48 @@
+Javascript - Introduction and basic programming
+- แนะนำ javascript คืออะไร? ทำไมเราต้องรู้จักและใช้มันเป็น
+- tag <script> สำหรับใช้งาน javascript
+    - การวางไว้ใน head
+        = ให้ script run ก่อน โดยที่ยังไม่สนว่าหน้าจอแสดง DOM ส้วนเนื้อหาเสร็จไหม
+    - การวางไว้ใน body (ส่วนใหญ่จะวางไว้ตรงนี่) 
+        = ให้ script run หลังจาก DOM ออกมาครบแล้ว 
+
+- แนะนำการใช้ import javascript file เข้ามาจากภายนอก (เหมือน CSS)
+- แนะนำ inspect element console ของ javascript
+- เริ่มต้นด้วย Basic programming กันก่อน
+    - ใช้คำสั่ง prompt สำหรับ input
+    - variable (let, const, var - แบบเก่า)
+        - String, Integer (ทั้งจำนวนเต็ม และ ทศนิยม), Boolean, Array, Object
+    
+    -Operators (+,-,*,/,%)
+    -Condition statement(if,else,switch)
+        - ==, !=, >, >=, <, <=
+        -  &&, ||, !
+    
+    -loop and Iteration (while, for)
+
+    -Array
+        - console.log ??
+        - push ( ต่อ array), pop (เอาของออก)
+        - includes (บอกว่ามีของไหม), sort (เรียงของ)
+        - for และ forEach
+
+    -Object
+        - คืออะไร
+        - index ของ มันคืออะไร
+        - console log / ลองวนลูปแสดงผลตาม key
+        -push, pop
+        - for and forEach, map( ex. เพิ่มคะแนน 2 เท่า), filter ( ex. เอาเฉพาะคนเกรด A)
+    
+    -Functions (การประกาศ, arrow function, scope)
+        - ชุดคำสั่งที่รวมกันเอาไว้
+        - what is parameter
+        - ex. function ตัดเกรด ที่ใส่ตัวเลขแล้วได้เกรดออกมา
+    
+    -Parameter Function
+        - array: forEach, map(เพิ่มตัวเลข 2 เท่า), filter (เอาคนที่มากกว่า 50 )
+        - object: find (ex. หาชิ้นนั้นแล้วดึงออกมา), map(ex. คำนวนเกรดออกมา), filter(เอาเฉพาะคนที่มากกว่า50)
+    
+    -Standard library อื่นๆ เช่น function ที่ javascript มีอยู่แล้ว เพื่ออำนวยความสะดวกมากขึ้น
+        - Math หาค่า min, max, floor, ceil, round, random
+        - ex. เล่นเกม โดยเราจะใส่ตัวเลขไปทายลูกเต๋า
+        - ถ้าทายถูก จะพ่นออกมาว่าถูกต้อง ไม่งั้น จะแสดงว่า บอททอยลูกเต๋าอะไร
