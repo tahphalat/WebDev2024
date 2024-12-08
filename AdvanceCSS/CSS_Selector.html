@@ -1,0 +1,103 @@
+        <!-- CSS Selector  -->
+<!-- 1. อยากแต่งแค่ item อันที่เป้นลูกของ container เท่านั้น ทำยังไง? -->
+<!-- 2. อยากแต่งแค่ item ที่เป็นลูกชั้นเดียว ทำยังไง? -->
+<!-- 3. อยากสืบทอดคุณสมบัติให้ class อื่น -->
+<!-- 4. อยากตกแต่ง class นึง ก็ต่อเมื่อมันอยู่ติด(ตามหลัง)กับ class นึงก่อน -->
+<!-- 5. อีกวิธีที่ อยากตกแต่งหลายๆ class ไปพร้อมๆกัน -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. ลูกที่ชื่อ item ทั้งหมดที่อยู่ใน container จะเปลี่ยน แต่ลูกที่ชื่อ item ของคนอื่น(class อื่น)ที่ไม่ใช้ container จะไม่เปลี่ยน เช่น ลุกของ footer-container ไม่เปลี่ยน ถึงแม้จะชื่อ item เหมือนกัน */
+        .container .item{
+            background-color : orange;
+        }
+        /* 2. เปลี่ยนแค่ลูก level เดียว ที่ติดกับ parent*/
+        .main-container > .item{
+            background-color : red;
+            padding:10px;
+        }
+        /* 3. มี base class 1 อัน แล้ว class อื่นสามารถสืบทอดคุณสมบัติของ base class ไปได้*/
+        .button{
+            border:0;
+            background-color:gray;
+            padding:10px;
+        }
+
+        .button.active{
+            background-color:blue;
+            color:white;
+        }
+        .button.danger{
+            background-color:red;
+            color:white;
+        }
+        .item1 + .item2{
+            background-color:bisque;
+        }
+
+        /* สิ่งที่อยู่ใน [] หมายถึง attribute อะไร ที่ต้องตรงเงื่อนไข มันถึงจะทำ เช่น ในที่นี้คือ input ใดๆ ก็ตามที่มี attribute type="text" มันจะได้รับการตกแต่ง */
+        input[type=text]{
+            border: 1px gray solid;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Assume item เป็นลูกของ container -->
+    <div class="container">
+        Container
+        <div class="item">
+            Item1
+        </div>
+        <div class="item">
+            Item2
+        </div>
+    </div>
+    <div class="footer-container">
+        Container
+        <div class="item">
+            Item3
+        </div>
+    </div>
+    <!-- 2. item เป็นลูกของ main-container แค่ชั้นเดียว  -->
+    <div class="main-container">
+        Container
+        <div class="item">
+            Item
+        </div>
+        <div class="item">
+            Item1
+        </div>
+        <div class="item">
+            Item2
+        </div>
+        <div class="item">
+            Item3
+        </div>
+    </div>
+
+    <!-- 3. มี class ติดกัน -->
+    <button class="button"> Button_base </button>
+    <button class="button active"> Button_1 </button>
+    <button class="button danger"> Button_2 </button>
+
+    <!-- 4. เพื่อนกัน (adjacent) -->
+    <div class="item1">Item1</div>
+    <div class="item2">Item2</div>
+
+    <div class="item2">Item2</div>
+    <div class="item1">Item1</div>
+    <!-- item2 ได้ตกแต่งเมื่อตามหลัง item1 เท่านั้น 
+        ถ้า item2 นำหน้า มันก็จะไม่ได้ตกแต่ง
+    -->
+
+    <!-- 5. attribute selector -->
+    <input type="text" name="firstname" id="">
+    <input type="text" name="surname" id="">
+    <input type="text" name="description" id="">
+</body>
+</html>

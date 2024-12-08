@@ -1,0 +1,68 @@
+<!-- Pseudo class คือ <className>:<ชื่อความสามารถพิเศษ> 
+    แบ่งเป็น Pseudo class state และ position    
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            background-color: gray;
+            border:0;
+            padding:20px;
+            color: white;
+        }
+        /* เอาเมาส์ไปวาง สีปุ่มต้องเปลี่ยน */
+        .button:hover{
+            background-color: blue;
+        }
+        /* เปลี่ยนสีเมื่อ click */
+        .button:active{
+            background-color: orange;
+        }
+        /* เปลี่ยนสีให้จุดที่ website focus อยู่ (จุดที่ focus อยู่นั่นคือจุดที่เรา click mouse ไป ) */
+        .button:focus{
+            /* จริงๆมันขึ้นสี orange แปปนึงเมื่อเราคลิ๊ก แต่พอเราคลิ๊ก เลยทำให้ website focus จุดนั้น มันเลยเปลี่ยนเป็นสี red ทันที */
+            background-color:red;
+        }
+        input:focus{
+            background-color: orange;
+        }
+
+        /* position pseudo class  */
+
+        /* อยากตกแต่งแค่บางตัวใน class container */
+        /* เช่นเรามี หัวข้อเรื่อง แล้วเราอยากจะ highlight แต่ตัวนั้น */
+        /* ตกแต่งตัวแรก */
+        .container .item:first-child{
+            background-color: blue;
+        }
+        /* เปลี่ยนตัวที่ 2 และ 4  */
+        .container .item:nth-child(2){
+            background-color: green;
+        }
+        .container .item:nth-child(4){
+            background-color: red;
+        }
+        /* ตกแต่งตัวสุดท้าย  */
+        .container .item:last-child{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <button class="button">Button</button> 
+
+    <!-- Pseudo Position -->
+     <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+     </div>
+</body>
+</html>

@@ -1,3 +1,5 @@
+//w3schools.com / web.dev / color material (https://m2.material.io/design/color/the-color-system.html#tools-for-picking-colors)
+
 Basic
 - CSS Text Styling (font-Size, font-family) แต่งตัวอักษร
 - CSS Box model (margin, padding, border)
@@ -17,6 +19,44 @@ Basic
 - หน่วยของ CSS (px, rem(อิงตาม root (นั่นคือ อิงตามขนาด html) เช่น 2 rem คือ ขนาดเป็น 2 เท่าของขนาด html (default html ขนาด 16 )) em อิงตามขนาดของตัวแม่มัน(ตัวที่กำลัง:%y+
 คลุมมันอยู่), vw(width) vh(height) : ขนาดอิงตามขนาดหน้าจอที่เรากำลังเปิด, percent)
 
+#############################################################################
 ADVANCE (แบบเกริ่น)
-- CSS Pseudo class(:hover, :active, :first-child)
-- CSS Transition and animation
+- CSS selector more
+    - class ใน parent (.container .item)
+    - class แบบติดกัน (.container.item)
+    - class แบบลูกติดกัน (.container > .item)
+    - class เพื่อนบ้าน (.container + .item)
+    - attribute selector (เลือกตาม attribute เช่น name ใน input)
+- CSS Pseudo selector
+    - Pseudo class (ทำตาม state หรือ position ของ DOM)
+    - Pseudo element แทรก css ใน element (DOM) เป็น element พิเศษ
+- CSS Transition / Transform / Animation สำหรับืำ Animation และตำแหน่ง CSS
+    - Transition : 
+        https://www.w3schools.com/css/tryit.asp?filename=trycss3_transform_translate 
+    - Transform (translate) : 
+        + rotate
+        + translate 
+        https://www.w3schools.com/css/tryit.asp?filename=trycss3_transform_rotate
+    - Animation
+        https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation1
+
+#############################################################################
+Responsive
+    - Basic structure ของ css Responsive
+    - guideline การแบ่งหน้าจอ
+    -inspector tools สำหรับการปรับขนาด device 
+
+Example of Responsive   
+    - Viewports (breakpoint)
+    - images (srcset) ใช้เปลี่ยนรูปตามขนาดหน้าจอต่างๆ เช่น ในคอมที่จอขนาดใหญ่ จะใช้รูปที่มีขนาดไฟล์มาก เพื่อให้ชัด แต่ถ้าเปิดใน moblie จะเเปลี่ยนไปใช้รูปที่มีขนาดเล็กกว่า เพื่อให้เว็บสามารถโหลดได้ไวขึ้น
+    - Fluid Layouts (flex) and Flexible Grid Systems 
+    - Menu bar (desktop) and nav bar (mobile) (display: none) - Easy Example
+
+การ import script css เข้าจากภายนอก
+    <link rel="stylesheet" href="styles.css">
+
+คำแนะนำตามประสบการณ์ ว่าควรทำอะไร
+    1. จัดการ layout (flex,grid) จัดโครงให้ถูกต้องก่อน
+    2. จัดการความสวยงาม แบ่งให้สวยงาม
+    3. Responsive พูดถึงเรื่องการจัดการ mobile
+    4. Animation และลูกเล่น

@@ -1,0 +1,38 @@
+  <!-- 
+   Viewports (breakpoint)
+    Images (srcset) 
+  -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: red;
+        }
+
+        /* min-width = หน้าจอตั้งแต่ 768px ขึ้นไปจะสี  blue 
+            max-width = หน้าจอตั้งแต่ 768px ลงไปจะสี blue
+        */
+        @media screen and (min-width: 768px) {
+           .container{
+            background-color:blue;
+           }  
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">Hello World breakpoint</div>    
+
+    <picture>
+        <!-- ถ้าจอเล็กกว่า 768 จะใช้ภาพใน srcset -->
+        <source media="(max-width: 768px)"
+        srcset="https://fastly.picsum.photos/id/925/200/200.jpg?hmac=GRls_CYMB5cOj1RE3IwjOC0zUwiPc25idJNavVPWbtM" 
+        >
+        <img src="https://fastly.picsum.photos/id/192/200/200.jpg?hmac=ADFozPC7IeAOBiVxD2ZbHYkpCVEa8Xj_tZE_Dm7yFuo" alt="">
+    </picture>
+  </body>
+  </html>
