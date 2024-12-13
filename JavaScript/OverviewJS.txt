@@ -1,3 +1,4 @@
+// codeacademy.com for practicing
 Javascript - Introduction and basic programming
 - แนะนำ javascript คืออะไร? ทำไมเราต้องรู้จักและใช้มันเป็น
 - tag <script> สำหรับใช้งาน javascript
