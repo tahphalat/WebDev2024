@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegisterForm</title>
+
+    <link rel="stylesheet" href="styles.css">        
+
+</head>
+<body>
+    <div class="container">
+        <div class="header form-input">
+            Register Form
+        </div>
+
+        <div class="flex form-input">
+            <!-- span ใช้กับ width ไม่ได้เพราะเป็น inline ดังนั้นใช้ div กับ Firstname -->
+            <div class="header-form">Firstname</div>
+            <input class="form" name="firstname" type="text">
+        </div>
+
+        <div class="flex form-input">
+            <div class="header-form">Surname</div>
+            <input class="form" name="surname" type="text"><br>
+        </div>
+
+        <div class="flex form-input">
+           <div class="header-form">Age</div>  
+            <input class="form" name="age" type="number" min="0" max="100">
+        </div>
+
+        <div class="gender form-input flex">
+            <div class="header-form">gender</div>
+            <div class="flex">
+                <div>
+                    <input name="gender" type="radio" value="Male"> Male
+                </div>
+                <div>
+                    <input name="gender" type="radio" value="Female"> Female
+                </div>
+                <div>
+                    <input name="gender" type="radio" value="Other"> Other
+                </div>
+            </div>
+        </div>
+
+        <div class="form-input">
+            Interest
+            <div>
+                    <input name="interest" type="checkbox" value="Sport"> Sport
+                </div>
+                <div>
+                    <input name="interest" type="checkbox" value="Music"> Music
+                </div>
+                <div>
+                    <input name="interest" type="checkbox" value="Book"> Book
+            
+                    <!-- user can select more than 1 options, although it has same attribute "name"  -->
+            </div>
+        </div>
+
+        <div class="form-input">
+            คำอธิบายตัวตนเพิ่มเติม
+            <div>
+                <textarea name="description" ></textarea>
+            </div>
+        </div>
+
+        <div class="form-input center">
+            <a href="https://youtube.com">youtube</a>
+        </div>
+
+        <div class="center">
+            <button onclick="submitData()" class="button">send</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

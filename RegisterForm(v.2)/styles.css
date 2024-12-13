@@ -1,0 +1,83 @@
+/* เมื่อใช้ mobile size 
+    
+    + ทำให้ form Firstname surname age จะเรียงแบบแนวตั้ง
+    + วางขอบเขตที่ CSS จะสามารถยืดได้ ตามจอที่ยืด (line 15)
+    + Register Form ขนาดเล็กลง
+    + gender เปลี่ยนเป็นเรียงแนวตั้ง
+    + ปุ่มขนาดใหญ่ขึ้นจาก 50% เป็น 100%
+*/
+@font-face{
+    font-family:'Kanit';
+    src: url(',/Kanit/Kanit-Regular.ttf')
+}
+body{
+    font-family:'kanit';
+}
+
+/* desktop size */
+.container{
+
+    width: 100%;
+    /* ยืดได้เต็มที่แค่ 640px
+        เกินกว่านั้นจะไม่ยืดแล้ว 
+    */
+    max-width:640px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: antiquewhite;
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+.header{
+    font-size: 30px;
+    /* ให้ text อยู่ตรงกลาง */
+    text-align: center;
+}
+
+.header-form{
+    width: 110px;
+}
+
+.flex{
+    display:flex;
+}
+
+.form-input{
+    margin-bottom:4px;
+}
+
+/* input.form เพื่อให้ class form ใน class input เท่านั้น ที่จะเกิดการเปลี่ยนแปลง */
+input.form, textarea{
+    border:1px gainsboro solid;
+    width: 100%;
+}
+
+.center{
+    text-align: center;
+}
+
+.button{
+    border:0;
+    width: 50%;
+    height: 40px;
+    /* หยิบสีจาก material.io */
+    background-color: #9CCC65 ;
+}
+
+/* mobile size */
+@media screen and (max-width: 768px){
+    .flex{
+        flex-direction: column;
+    }
+
+    /* เมื่อใช้ mobile "Register Form" จะมีขนาดเล็กลง */
+    .header{
+        font-size:24px;
+    }
+
+    .button{
+        width: 100%;
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+    <h2>User Interesting</h2>
+    <div id="content">
+        <!-- show user interesting -->
+         <!-- <ul>
+            <li>sport</li>
+            <li>game</li>
+            <li>movie</li>
+            <li>book</li>
+         </ul> -->
+
+    </div>
+   </div>
+   <input type="checkbox" name="interest" value="sport"> sport
+   <input type="checkbox" name="interest" value="game"> game
+   <input type="checkbox" name="interest" value="movie"> movie
+   <input type="checkbox" name="interest" value="book"> book
+   <button onclick="submitInterest()">sent</button>
+
+   <script>
+        function submitInterest(){
+            // เลือกไปยัง checkbox ทั้งหมด
+            let interestDOM = document.querySelectorAll('input[name=interest]')
+            let contentHTML = '<ul>'
+            // เอาค่า value ออกมาเฉพาะตัวที่เลือก
+            for(let i=0 ; i<interestDOM.length ; i++){
+                if(interestDOM[i].checked){
+                    // console.log(interestDOM[i].value)
+                    contentHTML += '<li>' + interestDOM[i].value + '</li>'
+
+                }
+            }
+            // วนค่าตัวที่เลือกใส่ HTML กลับไป
+            contentHTML +='</ul>'
+            
+            let contentDOM = document.getElementById('content')
+            // นำcontentHTML ใส่กลับเข้าไปใน inner.HTML
+            contentDOM.innerHTML = contentHTML
+            // console.log(contentHTML)
+        }
+   </script>
+
+</body>
+</html>

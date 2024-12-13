@@ -1,0 +1,104 @@
+<!-- user -> html -> JS -->
+<!-- JS Event  -->
+ <!-- มี 4 ประเภท ที่สำคัญ : สามารถไปดูเพิ่มเติมได้ที่ w3School
+    1. onclick : ใช้ได้กับทุก element
+    2. onchange : มักใช้กับ input เป็นหลัก
+    3. onkeydown, onkeyup, onkeypress
+    4. onmouseover, onmousedown, onmouseup
+
+    5. addEventListener : ใช้แทน 4 ข้อด้านบนได้ในกรณีที่อยากใช้ JS สร้าง DOM 
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 1. onclick  -->
+    <button onclick="userClicked()">Click here!!</button>
+    <div onclick="userClickDIV()">Click Pls</div>
+
+        <!-- 2. onchange  -->
+    <input type="radio" name="gender" value="Male" onchange="changeGender()"> Male
+    <input type="radio" name="gender" value="Female" onchange="changeGender()" > Female
+    <!-- checked = 'true' เพื่อกำหนดค่า default -->
+    <input type="radio" name="gender" value="Other" onchange="changeGender()" checked="true"> Other
+
+        <!-- 3. onkeydown/up/press -->
+    <div>
+    favorite food <input type="text" name="foodname" onkeyup="enterFoodName()">
+    </div>
+
+        <!-- 4. onmouseover/down/up -->
+    <div 
+    onmouseover="overItem()"
+    onmouseup="upItem()"
+    onmousedown="downItem()">Click Here!!</div>
+
+        <!-- 5. addEventListener -->
+    <button onclick="clickItem()">1stButton</button>
+    <button id="thisbutton">2ndButton</button>
+    <script>
+        // 1. onclick
+        function userClicked(){ 
+            console.log('Hello, World')
+        }
+        function userClickDIV(){
+            console.log('div Clicked')
+        }
+        
+        // 2. onchange
+        function changeGender(){
+            // console.log('change gender')
+            // เลือก gender ทุก input ออกมา
+            let genderInputs = document.querySelectorAll('input[name=gender]')
+            let gender = ''
+            
+            // ใครมี check อยู่ = เพศนั้นโดนเลือก
+            for(let i=0 ; i<genderInputs.length ; i++){
+                if(genderInputs[i].checked){
+                    // console.log(genderInputs[i].value)
+                    gender = genderInputs[i].value
+                }
+            }
+            console.log('selected gender : ', gender)
+        }
+        
+        
+        // 3. keydown, keyup, keypress
+        function enterFoodName(){
+            // จิ้มไปยัง input foodname
+            let foodnameDOM = document.querySelector('input[name=foodname]')
+            //  เอา value ของ foodname ออกมาก
+            console.log('change food name : ', foodnameDOM.value)
+        }
+        
+        // 4. onmouseover, onmousedown, onmouseup
+        function overItem(){
+            console.log('mouse over')
+        }
+        
+        function upItem(){
+            console.log('mouse up')
+        }
+        
+        function downItem(){
+            console.log('mouse down')
+        }
+
+
+            // 5. addEventListener
+        function clickItem(){
+            console.log('1st Button clicked')
+        }
+        let thisbuttonDOM = document.getElementById('thisbutton')
+
+        thisbuttonDOM.addEventListener('click', function () {
+            console.log('2nd Button clicked')
+        })
+
+        </script>
+</body>
+</html>

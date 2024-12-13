@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hello">Hello <span style="display: none;"> DOM</span></div>
+    <script>
+        let helloDOM = document.getElementById('hello')
+        // textContent : ดึงข้อความทั้งหมดออกมา
+        console.log('textContent : ', helloDOM.textContent)
+        // innertext : ดึงข้อความที่ user มองเห็นออกมา 
+        console.log('innerText : ', helloDOM.innerText)
+        // innerHTML : ดึงตรงที่เป็น HTML ออกมาด้วย
+        console.log('innerHTML : ', helloDOM.innerHTML)
+    </script>
+</body>
+</html>
